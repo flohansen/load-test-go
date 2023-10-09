@@ -5,14 +5,14 @@ import (
 	"net"
 )
 
-type SocketClient struct {
+type TcpClient struct {
 }
 
-func NewSocketClient() *SocketClient {
-	return &SocketClient{}
+func NewTcpClient() *TcpClient {
+	return &TcpClient{}
 }
 
-func (c *SocketClient) Send(target string, path string) error {
+func (c *TcpClient) Send(target string, path string) error {
 	conn, err := net.Dial("tcp", target)
 	if err != nil {
 		return err

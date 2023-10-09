@@ -23,7 +23,7 @@ func main() {
 		Path:        *path,
 	}
 
-	client := net.NewSocketClient()
+	client := net.NewTcpClient()
 	tester := load.NewTester(config, client)
 	if err := tester.Run(); err != nil {
 		log.Fatal(err)
